@@ -1,0 +1,57 @@
+<mat-card>
+
+    <h1>Add New Category</h1>
+   <!-- {{category | json}} -->
+
+    <mat-card-content> <!--</mat-card-content>/for padding we use mat-card-content -->
+
+    <div class="bootstrap-wrapper">
+        <div class="row">
+            <div class="col-md-10 offset-md-1">
+                <form (ngSubmit)="formSubmit()">
+
+                
+            <mat-form-field class="w100" appearance="outline">
+                <mat-label>Title </mat-label>
+        
+                <!--
+                    date : 17/07/2023
+                    time : 04:50am 
+                    required is used not accept empty value
+                    
+                 -->
+                <input 
+                required 
+                autofocus
+                type="text" 
+                name = "title" 
+                matInput
+                placeholder="Enter here"
+                [(ngModel)]="category.title"
+                />
+            </mat-form-field>
+
+            <mat-form-field class="w100" appearance="outline">
+                <mat-label>Description </mat-label>
+        
+                <textarea
+                 
+                name = "description" 
+                matInput
+                placeholder="Enter Category Description"
+                rows="15"
+                [(ngModel)]="category.description"
+                >
+                </textarea>
+            </mat-form-field>
+
+            <div class="container text-center mt15">
+                <button mat-raised-button color="accent">Add</button>
+            </div>
+        </form>
+        </div>
+        </div>
+    </div>
+    </mat-card-content>
+
+</mat-card>
